@@ -1,0 +1,24 @@
+include ../makefile.objs
+
+OBJS = $(foreach obj, $(!!!), $(obj).o)
+
+.phony : !;;
+
+
+all : ../$(LIB)
+
+../$(LIB) : $(OBJS)
+	$(MAKE) -C ../
+
+
+***.o : ***.cpp ***.hpp
+	g++ $(FLAGS) -c -o ***.o ***.cpp
+
+!;; : $(OBJS)
+
+
+# clean up
+
+clean:
+	delete *.(o|ii|s)
+

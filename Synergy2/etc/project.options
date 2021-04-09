@@ -1,0 +1,16 @@
+; project configuration (do not delete)
+
+(compiler
+
+    (alias "gcc/amigaos4/latest")
+
+    (makefile "makefile")
+
+    (make "make -j -f %makefile %target")
+
+    (target "")
+
+    (executable "Work:STR/synergy2/asynergyc.debug")
+
+    (arguments "megumi windows")
+)

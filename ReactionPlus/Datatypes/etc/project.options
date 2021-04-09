@@ -1,0 +1,23 @@
+; project configuration (do not delete)
+
+(compiler
+
+    (alias "gcc/classic")
+
+    (makefile "makefile")
+
+    (make "make -j 5 -f %makefile %target")
+
+    (target "")
+)
+
+(compiler
+
+    (alias "gcc/amigaos4/latest")
+
+    (makefile "makefile")
+
+    (make "make -j 5 -f %makefile %target")
+
+    (target "")
+)

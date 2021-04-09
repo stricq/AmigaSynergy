@@ -1,0 +1,48 @@
+LIB_RP = libraplus.a
+LIB_CO = libcommodities.a
+LIB_DA = libdatatypes.a
+LIB_DO = libdos.a
+LIB_EX = libexec.a
+LIB_IF = libiffparse.a
+LIB_IN = libintuition.a
+LIB_LO = liblocale.a
+LIB_PR = libprefs.a
+LIB_RA = libreaction.a
+LIB_SP = libsockets.a
+LIB_UT = libutility.a
+
+LIB  = $(LIB_RP) $(LIB_CO) $(LIB_DA) $(LIB_DO) $(LIB_EX) $(LIB_IF) $(LIB_IN) $(LIB_LO) $(LIB_PR) $(LIB_RA) $(LIB_SP) $(LIB_UT)
+
+DIRS = Reaction Commodities DOS Exec Intuition Locale IFFParse Datatypes Prefs Utility Sockets
+
+RP          = Exception IndexRangeException
+COMMODITIES = Commodity CommodityMessage
+DATATYPES   = Datatypes Picture
+DOS         = DOS File DateTime Reader Writer BufferedReader BufferedWriter FileReader FileWriter
+EXEC        = SignalEvents IPC MessagePort MessagePortFactory SignalSemaphore SignalSemaphoreFactory IORequestFactory IOBase \
+              TimerDevice TimerRequest ClipboardDevice InputDevice InputEvent Interrupt Exec Task
+IFFPARSE    = IFF IFFDOS IFFClipboard
+INTUITION   = IntuitionBase Screen Pointer
+LOCALE      = Locale
+PREFS       = Prefs WBPattern
+REACTION    = Application AppWindow ReactionGadget Button CheckBox Chooser ClickTab FileRequest Integer Layout ListBrowser Page \
+              RadioButton Scroller Space String TextEditor ReactionClass Window ReactionImage Label
+SOCKETS     = Socket SocketEvents SocketReader SocketWriter Packet
+UTILITY     = ParseLine ParseException Configuration
+
+RP_OBJS          = $(foreach obj, $(RP), $(obj).o)
+COMMODITIES_OBJS = $(foreach obj, $(COMMODITIES), Commodities/$(obj).o)
+DATATYPES_OBJS   = $(foreach obj, $(DATATYPES), Datatypes/$(obj).o)
+DOS_OBJS         = $(foreach obj, $(DOS), DOS/$(obj).o)
+EXEC_OBJS        = $(foreach obj, $(EXEC), Exec/$(obj).o)
+IFFPARSE_OBJS    = $(foreach obj, $(IFFPARSE), IFFParse/$(obj).o)
+INTUITION_OBJS   = $(foreach obj, $(INTUITION), Intuition/$(obj).o)
+LOCALE_OBJS      = $(foreach obj, $(LOCALE), Locale/$(obj).o)
+PREFS_OBJS       = $(foreach obj, $(PREFS), Prefs/$(obj).o)
+REACTION_OBJS    = $(foreach obj, $(REACTION), Reaction/$(obj).o)
+SOCKET_OBJS      = $(foreach obj, $(SOCKETS), Sockets/$(obj).o)
+UTILITY_OBJS     = $(foreach obj, $(UTILITY), Utility/$(obj).o)
+
+FLAGS = -I.. -Wall -Wextra -Wwrite-strings -ggdb -Os -mcrt=newlib -L/SDK/Include/netinclude #-mabi=altivec -maltivec -mvrsave=yes
+LIBS  = -mcrt=newlib -lm
+
