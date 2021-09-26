@@ -2,8 +2,7 @@
 Welcome to the Amiga Synergy Client v2.0
 ----------------------------------------
 
-(C) Douglas McLaughlin
-    STR Programming Services
+(C) STR Programming Services
     2005, 2006
 
 This file was written using Synergy.
@@ -115,14 +114,3 @@ you don't have one (you should!) place the client startup in your
 S:User-Startup script.  It can be started like this:
 
 Run *><>NIL: Work:Synergy2/asynergyc >NIL: 192.168.1.2 windows
-
-
-Emailware
----------
-
-If you like this program, email me.
-
-Douglas McLaughlin
-STR Programming Services
-stricq AT stricq DOT com
-
